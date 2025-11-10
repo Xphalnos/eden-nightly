@@ -229,7 +229,7 @@ jobs:
            - toolchain: msvc
              optimize: normal
              arch: x86_64
-             runs-on: windows-2022
+             runs-on: windows-2025
            - toolchain: msvc
              optimize: normal
              arch: arm64
@@ -237,19 +237,19 @@ jobs:
            - toolchain: clang
              optimize: normal
              arch: x86_64
-             runs-on: windows-2022
+             runs-on: windows-2025
 #           - toolchain: clang
 #             optimize: PGO
 #             arch: x86_64
-#             runs-on: windows-2022
+#             runs-on: windows-2025
 #           - toolchain: msys2
 #             optimize: PGO
 #             arch: x86_64
-#             runs-on: windows-2022
+#             runs-on: windows-2025
            - toolchain: msys2
              optimize: normal
              arch: x86_64
-             runs-on: windows-2022
+             runs-on: windows-2025
     defaults:
       run:
         shell: ${{ matrix.toolchain == 'msys2' && 'msys2 {0}' || 'bash {0}' }}
