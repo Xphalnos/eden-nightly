@@ -298,7 +298,13 @@ jobs:
         shell: bash
         run: |
           choco install ccache -y --no-progress
-          
+
+      - name: Install nsis
+        if: ${{ matrix.toolchain != 'msvc' && matrix.toolchain == 'clang' }}
+        shell: bash
+        run: |
+          choco install nsis -y --no-progress
+
       - name: Install LLVM
         if: ${{ matrix.toolchain != 'msys2' && matrix.toolchain == 'clang' }}
         shell: powershell
